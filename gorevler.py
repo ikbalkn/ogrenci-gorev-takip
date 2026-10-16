@@ -25,9 +25,13 @@ while True:
     elif secim == "2":
 
         for i, gorev in enumerate(gorevler):
-            durum = "Tamamlandı" if gorev["tamamlandi"] else "Bekliyor"
 
-            print(i + 1, "-", gorev["ad"], "-", durum)
+            if gorev["tamamlandi"]:
+                sembol = "✅"
+            else:
+                sembol = "⏳"
+
+            print(i + 1, "-", sembol, gorev["ad"])
 
     elif secim == "3":
 
@@ -68,4 +72,3 @@ while True:
 
     else:
         print("Geçersiz seçim!")
-    
